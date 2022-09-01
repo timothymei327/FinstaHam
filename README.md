@@ -19,6 +19,9 @@ This website is an Instagram clone which would allow users to post their own pho
 - Javascript
 - React
 - Django
+- Auth0
+- SemanticUI
+- Tailwind
 
 ### _Screenshots_
 
