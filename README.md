@@ -37,7 +37,7 @@ This website is an Instagram clone which would allow users to post their own pho
 
 #### Entity Relationship Diagram
 
-![ERD](https://i.imgur.com/O7UnTnI.png)
+![ERD](https://i.imgur.com/R03azKT.png)
 
 #### Component Heirarchy Diagram
 
