@@ -4,8 +4,9 @@
 
 ### By: Timothy Mei
 
-[LinkedIn](https://www.linkedin.com/in/timothymei/)
-
+- [LinkedIn](https://www.linkedin.com/in/timothymei/)
+- [FinstaHam_Frontend](https://github.com/timothymei327/FinstaHam)
+- [FinstaHam_Backend](https://github.com/timothymei327/FinstaHam_backend)
 ---
 
 ### _Description_
