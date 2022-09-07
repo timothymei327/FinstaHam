@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+// import Axios from 'axios'
 
-const Register = () => {
+const Register = ({ BASE_URL }) => {
   const [registerForm, setRegisterForm] = useState({
     username: '',
     email: '',
@@ -16,7 +17,8 @@ const Register = () => {
   }
 
   const handleSubmit = async (e) => {
-    //submit functionality
+    e.preventDefault()
+    // await Axios.post('/')
   }
 
   return (
@@ -28,6 +30,14 @@ const Register = () => {
           type="username"
           placeholder="Username"
           value={registerForm.username}
+        />
+        <br />
+        <input
+          onChange={handleChange}
+          name="email"
+          type="email"
+          placeholder="Email"
+          value={registerForm.email}
         />
         <br />
         <input
