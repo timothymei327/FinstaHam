@@ -5,10 +5,46 @@ body{
   font-family: 'Montserrat', sans-serif;
 }
 
-header{
+header {
   display: flex;
-  background-color: black;
-  height: 5em;
+  height: 6em;
+  justify-content: space-around;
+  align-items: center;
+  border: 5px solid #002855;
+  margin-bottom: 2em;
+}
+
+header button {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid #002855;
+  cursor: pointer;
+  position: relative;
+  background-color: darkgray;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+header button:after {
+  content: "";
+  background-color: darkgray;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+header button:hover:after {
+  top: 0px;
+  left: 0px;
 }
 
 header Link{
@@ -17,6 +53,8 @@ header Link{
 
 .nav-logo{
   height: 5em;
+  border: 3px solid #002855;
+  border-radius: 5px;
 }
 
 .home-container{

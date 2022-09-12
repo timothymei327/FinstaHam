@@ -5,14 +5,14 @@ const Nav = () => {
 
   return (
     <header>
-          <button onClick={() => navigate(-1)}>Back</button>
+          <button className="nav-back" onClick={() => navigate(-1)}>Back</button>
       <Link to="/">
         <div className="logo-wrapper" alt="logo">
         <img className='nav-logo' src="https://i.imgur.com/7vB6vgD.png" />
         </div>
       </Link>    
-      <Link to="/ForumList">Forums</Link>
-      <Link to="/ForumForm">Create a Forum!</Link>
+      <button className="nav-back" onClick={() => navigate("/ForumList")}>Forums</button>
+      <button className="nav-back" onClick={() => navigate("/ForumForm")}>Create a Forum!</button>
     </header>
   )
 }

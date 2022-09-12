@@ -25,7 +25,7 @@ const PostList = ({BASE_URL}) => {
           onClick={() => navigate(`/PostDetails/${post.id}`)}
         >
           {/* <img src={post.photo_urls[0]} className="post-images" alt="post-image" /> */}
-        {post.photo_urls.map((photo) => (
+        {post.photo_urls?.map((photo) => (
           <img src={photo} className="post-images" alt="post-image" />
         ))}
         <div className="card-body">
