@@ -5,6 +5,20 @@ body{
   font-family: 'Montserrat', sans-serif;
 }
 
+header{
+  display: flex;
+  background-color: black;
+  height: 5em;
+}
+
+header Link{
+  text-decoration: none;
+}
+
+.nav-logo{
+  height: 5em;
+}
+
 .home-container{
   background-color: #002855;
   min-width: 100vh;
@@ -147,4 +161,17 @@ button:hover:after {
 .post-images{
   height: 10em;
   width: 10em;
+}
+
+.forum-form{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.forum-form-fields {
+  grid-column-start: 2;
+  grid-row-start: 2;
+  text-align: center;
+  border: 2px solid black
 }
