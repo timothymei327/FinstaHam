@@ -6,6 +6,8 @@ import ForumList from './pages/ForumList'
 import ForumDetails from './pages/ForumDetails'
 import ForumForm from './pages/ForumForm'
 import Nav from './components/Nav'
+import UpdateForum from './pages/UpdateForum'
+import PostDetails from './pages/PostDetails'
 
 function App() {
   const BASE_URL = 'http://localhost:8000'
@@ -24,6 +26,14 @@ function App() {
           element={<ForumDetails BASE_URL={BASE_URL} />}
         />
         <Route path="/ForumForm" element={<ForumForm BASE_URL={BASE_URL} />} />
+        <Route
+          path="/UpdateForum/:id"
+          element={<UpdateForum BASE_URL={BASE_URL} />}
+        />
+        <Route
+          path="/PostDetails/:id"
+          element={<PostDetails BASE_URL={BASE_URL} />}
+        />
       </Routes>
     </div>
   )

@@ -12,6 +12,7 @@ const Nav = () => {
         </div>
       </Link>    
       <Link to="/ForumList">Forums</Link>
+      <Link to="/ForumForm">Create a Forum!</Link>
     </header>
   )
 }

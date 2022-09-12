@@ -22,7 +22,7 @@ const PostList = ({BASE_URL}) => {
       {posts.map((post) => (
         <div
           className="card"
-          onClick={() => navigate(`/PostDetail/${post.id}`)}
+          onClick={() => navigate(`/PostDetails/${post.id}`)}
         >
           {/* <img src={post.photo_urls[0]} className="post-images" alt="post-image" /> */}
         {post.photo_urls.map((photo) => (

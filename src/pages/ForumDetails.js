@@ -19,7 +19,12 @@ const ForumDetails = ({ BASE_URL }) => {
 
   return (
     <div className="banner mb-3">
-      <img src={forumDetails.photo_url} className="banner-img-top" alt="..." />
+      <img
+        src={forumDetails.photo_url}
+        className="banner-img-top"
+        alt="forum-image"
+      />
+      <button onClick={() => navigate(`/UpdateForum/${id}`)}>Edit</button>
       <div className="card-body">
         <h3 className="card-title">{forumDetails.name}</h3>
         <p className="card-text">{forumDetails.description}</p>

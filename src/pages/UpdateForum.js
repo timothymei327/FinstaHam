@@ -1,8 +1,10 @@
-import { useNavigate } from 'react-router'
+import { useNavigate, useParams } from 'react-router'
 import { useState } from 'react'
 import axios from 'axios'
 
-const ForumForm = ({ BASE_URL }) => {
+const UpdateForum = ({ BASE_URL }) => {
+  let { id } = useParams()
+  const [file, setFile] = useState()
   const [formValues, setFormValues] = useState({
     name: '',
     description: '',
@@ -17,7 +19,18 @@ const ForumForm = ({ BASE_URL }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    await axios.post(`${BASE_URL}`, formValues)
+    await axios.put(`${BASE_URL}/forums/${id}`, formValues)
+    setFormValues({
+      name: '',
+      description: '',
+      photo_url: ''
+    })
+    navigate('/ForumList')
+  }
+
+  const handleDelete = async (e) => {
+    e.preventDefault()
+    await axios.delete(`${BASE_URL}/forums/${id}`)
     setFormValues({
       name: '',
       description: '',
@@ -27,14 +40,20 @@ const ForumForm = ({ BASE_URL }) => {
   }
 
   const onFileChange = (e) => {
+    setFile({ file: e.target.files[0] })
+    console.log(file)
+  }
+
+  const onFileUpload = async (e) => {
+    e.preventDefault()
     const clientId = process.env.REACT_APP_CLIENT_ID
     const auth = 'Client-ID ' + clientId
     console.log(clientId)
 
     const formData = new FormData()
-    formData.append('image', e.target.files[0])
+    formData.append('image', file)
 
-    fetch('https://api.imgur.com/3/image', {
+    await fetch('https://api.imgur.com/3/image', {
       method: 'POST',
       body: formData,
       headers: {
@@ -45,7 +64,6 @@ const ForumForm = ({ BASE_URL }) => {
       .then((data) => data.json())
       .then((data) => {
         console.log(data)
-        setFormValues({ ...formValues, photo_url: data.data.link })
       })
   }
 
@@ -68,6 +86,7 @@ const ForumForm = ({ BASE_URL }) => {
           className="upload-photo"
           name="photo_url"
           type="file"
+          accept="image/png, image/jpg"
           onChange={onFileChange}
         />
         <button
@@ -78,9 +97,10 @@ const ForumForm = ({ BASE_URL }) => {
         >
           Submit
         </button>
+        <button onClick={handleDelete}>Delete Forum</button>
       </form>
     </div>
   )
 }
 
-export default ForumForm
+export default UpdateForum
