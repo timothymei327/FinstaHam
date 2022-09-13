@@ -4,7 +4,6 @@ import axios from 'axios'
 
 const UpdateForum = ({ BASE_URL }) => {
   let { id } = useParams()
-  const [file, setFile] = useState()
   const [fileLimit, setFileLimit] = useState('')
   const [originalForum, setOriginalForum] = useState({})
   const [formValues, setFormValues] = useState({
@@ -111,6 +110,13 @@ const UpdateForum = ({ BASE_URL }) => {
           accept="image/png, image/jpg"
           onChange={onFileChange}
         />
+        <br />
+        {fileLimit ? (
+          <div className="limit-error">
+            Too many files uploaded, you may only upload a single pictures for
+            your forum page.
+          </div>
+        ) : null}
         <button
           className="upload-photo"
           name="submit"
