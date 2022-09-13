@@ -7,7 +7,7 @@ const ForumForm = ({ BASE_URL }) => {
   const [formValues, setFormValues] = useState({
     name: '',
     description: '',
-    photo_url: ''
+    photo_url: 'https://imgur.com/7vB6vgD.png'
   })
   let navigate = useNavigate()
 
@@ -22,7 +22,7 @@ const ForumForm = ({ BASE_URL }) => {
     setFormValues({
       name: '',
       description: '',
-      photo_url: ''
+      photo_url: 'https://imgur.com/7vB6vgD.png'
     })
     navigate('/ForumList')
   }
