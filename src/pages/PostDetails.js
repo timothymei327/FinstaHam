@@ -5,7 +5,25 @@ import axios from 'axios'
 const PostDetails = ({ BASE_URL }) => {
   let { id } = useParams()
   const [postDetails, setPostDetails] = useState([])
+  let [newComment, setNewComment] = useState({
+    post: id,
+    body: ''
+  })
   let navigate = useNavigate()
+
+  const handleChange = (e) => {
+    setNewComment({ ...newComment, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    console.log(newComment)
+    await axios.post(`${BASE_URL}/comments/`, newComment)
+    setNewComment({
+      post: id,
+      body: ''
+    })
+  }
 
   useEffect(() => {
     const getPostDetails = async () => {
@@ -14,7 +32,7 @@ const PostDetails = ({ BASE_URL }) => {
       setPostDetails(res.data)
     }
     getPostDetails()
-  }, [])
+  }, [newComment])
 
   return (
     <div className="banner mb-3">
@@ -31,6 +49,19 @@ const PostDetails = ({ BASE_URL }) => {
           <p className="comment">{comment.body}</p>
         ))}
       </div>
+      <form className="comment-form">
+        <textarea
+          className="commentBox"
+          rows="10"
+          placeholder="Leave a comment!"
+          name="body"
+          value={newComment.body}
+          onChange={handleChange}
+        ></textarea>
+        <button onClick={handleSubmit} className="postButton">
+          Post Comment
+        </button>
+      </form>
     </div>
   )
 }

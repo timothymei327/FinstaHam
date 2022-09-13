@@ -105,6 +105,7 @@ const PostForm = ({ BASE_URL }) => {
         <input
           id="hashtagInput"
           name="hashtagInput"
+          value={hashtagInput}
           type="text"
           placeholder="#hashtag"
           onChange={handleHashtagInput}
