@@ -1,10 +1,11 @@
 import { useNavigate, useParams } from 'react-router'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 
 const UpdateForum = ({ BASE_URL }) => {
   let { id } = useParams()
   const [file, setFile] = useState()
+  const [originalForum, setOriginalForum] = useState({})
   const [formValues, setFormValues] = useState({
     name: '',
     description: '',
@@ -67,15 +68,35 @@ const UpdateForum = ({ BASE_URL }) => {
       })
   }
 
+  useEffect(() => {
+    const getOriginalForum = async () => {
+      let res = await axios.get(`${BASE_URL}/forums/${id}`)
+      setOriginalForum(res.data)
+      console.log(res.data)
+      setFormValues({
+        name: res.data.name,
+        description: res.data.description,
+        photo_url: ''
+      })
+    }
+    getOriginalForum()
+  }, [])
+
   return (
     <div className="forum-form">
       <form className="forum-form-fields">
         <label>Forum Name: </label>
-        <input name="name" placeholder="name" onChange={handleChange} />
+        <input
+          name="name"
+          value={formValues.name}
+          placeholder="name"
+          onChange={handleChange}
+        />
         <br />
         <label>Forum Description: </label>
         <textarea
           name="description"
+          value={formValues.description}
           rows="10"
           placeholder="description"
           onChange={handleChange}
@@ -86,7 +107,7 @@ const UpdateForum = ({ BASE_URL }) => {
           className="upload-photo"
           name="photo_url"
           type="file"
-          accept="image/png, image/jpg"
+          accept="image/png, image/jpg, image/jpeg"
           onChange={onFileChange}
         />
         <button
