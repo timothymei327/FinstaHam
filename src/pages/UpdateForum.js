@@ -5,6 +5,7 @@ import axios from 'axios'
 const UpdateForum = ({ BASE_URL }) => {
   let { id } = useParams()
   const [file, setFile] = useState()
+  const [fileLimit, setFileLimit] = useState('')
   const [originalForum, setOriginalForum] = useState({})
   const [formValues, setFormValues] = useState({
     name: '',
@@ -41,31 +42,31 @@ const UpdateForum = ({ BASE_URL }) => {
   }
 
   const onFileChange = (e) => {
-    setFile({ file: e.target.files[0] })
-    console.log(file)
-  }
-
-  const onFileUpload = async (e) => {
-    e.preventDefault()
     const clientId = process.env.REACT_APP_CLIENT_ID
     const auth = 'Client-ID ' + clientId
     console.log(clientId)
 
-    const formData = new FormData()
-    formData.append('image', file)
+    if (e.target.files.length > 1) {
+      setFileLimit(e.target.files.length)
+      document.getElementById('upload-post').disabled = true
+    } else {
+      const formData = new FormData()
+      formData.append('image', e.target.files[0])
 
-    await fetch('https://api.imgur.com/3/image', {
-      method: 'POST',
-      body: formData,
-      headers: {
-        Authorization: auth
-      },
-      body: formData
-    })
-      .then((data) => data.json())
-      .then((data) => {
-        console.log(data)
+      fetch('https://api.imgur.com/3/image', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          Authorization: auth
+        },
+        body: formData
       })
+        .then((data) => data.json())
+        .then((data) => {
+          console.log(data)
+          setFormValues({ ...formValues, photo_url: data.data.link })
+        })
+    }
   }
 
   useEffect(() => {
@@ -107,7 +108,7 @@ const UpdateForum = ({ BASE_URL }) => {
           className="upload-photo"
           name="photo_url"
           type="file"
-          accept="image/png, image/jpg, image/jpeg"
+          accept="image/png, image/jpg"
           onChange={onFileChange}
         />
         <button
