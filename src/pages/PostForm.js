@@ -5,6 +5,7 @@ import axios from 'axios'
 const PostForm = ({ BASE_URL }) => {
   let { id } = useParams()
   const [hashtagInput, setHashtagInput] = useState('')
+  const [hashtagError, setHashtagError] = useState('')
   const [fileLimit, setFileLimit] = useState('')
   const [formValues, setFormValues] = useState({
     forum: id,
@@ -26,11 +27,16 @@ const PostForm = ({ BASE_URL }) => {
 
   const addHashtag = (e) => {
     e.preventDefault()
-    setFormValues({
-      ...formValues,
-      hashtags: [...formValues.hashtags, hashtagInput]
-    })
-    setHashtagInput('')
+    if (hashtagInput.includes(' ')) {
+      setHashtagInput('')
+      setHashtagError(`Hashtags must begin with '#' and not contain any spaces`)
+    } else {
+      setFormValues({
+        ...formValues,
+        hashtags: [...formValues.hashtags, hashtagInput]
+      })
+      setHashtagInput('')
+    }
   }
 
   const handleSubmit = async (e) => {
@@ -101,6 +107,7 @@ const PostForm = ({ BASE_URL }) => {
           onChange={handleChange}
         />
         <br />
+        {hashtagError ? <div>{hashtagError}</div> : null}
         <label>Hashtags: </label>
         <input
           id="hashtagInput"
