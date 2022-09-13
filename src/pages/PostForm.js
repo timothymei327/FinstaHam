@@ -50,7 +50,7 @@ const PostForm = ({ BASE_URL }) => {
     const auth = 'Client-ID ' + clientId
     console.log(clientId)
 
-    e.target.files.forEach((file) => {
+    Object.values(e.target.files).forEach((file) => {
       const formData = new FormData()
       formData.append('image', file)
 
@@ -65,7 +65,8 @@ const PostForm = ({ BASE_URL }) => {
         .then((data) => data.json())
         .then((data) => {
           console.log(data)
-          setFormValues({ ...formValues, photo_url: data.data.link })
+          formValues.photo_urls.push(data.data.link)
+          console.log(formValues)
         })
     })
   }
@@ -91,11 +92,15 @@ const PostForm = ({ BASE_URL }) => {
         <br />
         <label>Hashtags: </label>
         <input
-          name="hashtag-input"
+          id="hashtagInput"
+          name="hashtagInput"
+          type="text"
           placeholder="#hashtag"
           onChange={handleHashtagInput}
         />
-        <button onClick={addHashtag}>+</button>
+        <button type="submit" onClick={addHashtag}>
+          +
+        </button>
         {formValues.hashtags?.map((hashtag) => (
           <div>{hashtag}</div>
         ))}
