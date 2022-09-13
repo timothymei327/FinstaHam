@@ -3,6 +3,7 @@ import { useState } from 'react'
 import axios from 'axios'
 
 const ForumForm = ({ BASE_URL }) => {
+  const [fileLimit, setFileLimit] = useState('')
   const [formValues, setFormValues] = useState({
     name: '',
     description: '',
@@ -31,22 +32,27 @@ const ForumForm = ({ BASE_URL }) => {
     const auth = 'Client-ID ' + clientId
     console.log(clientId)
 
-    const formData = new FormData()
-    formData.append('image', e.target.files[0])
+    if (e.target.files.length > 1) {
+      setFileLimit(e.target.files.length)
+      document.getElementById('upload-post').disabled = true
+    } else {
+      const formData = new FormData()
+      formData.append('image', e.target.files[0])
 
-    fetch('https://api.imgur.com/3/image', {
-      method: 'POST',
-      body: formData,
-      headers: {
-        Authorization: auth
-      },
-      body: formData
-    })
-      .then((data) => data.json())
-      .then((data) => {
-        console.log(data)
-        setFormValues({ ...formValues, photo_url: data.data.link })
+      fetch('https://api.imgur.com/3/image', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          Authorization: auth
+        },
+        body: formData
       })
+        .then((data) => data.json())
+        .then((data) => {
+          console.log(data)
+          setFormValues({ ...formValues, photo_url: data.data.link })
+        })
+    }
   }
 
   return (
@@ -70,6 +76,13 @@ const ForumForm = ({ BASE_URL }) => {
           type="file"
           onChange={onFileChange}
         />
+        <br />
+        {fileLimit ? (
+          <div className="limit-error">
+            Too many files uploaded, you may only upload a single pictures for
+            your forum page.
+          </div>
+        ) : null}
         <button
           className="upload-photo"
           name="submit"

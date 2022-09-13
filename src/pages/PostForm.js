@@ -1,11 +1,11 @@
 import { useNavigate, useParams } from 'react-router'
 import { useState } from 'react'
 import axios from 'axios'
-import { render } from '@testing-library/react'
 
 const PostForm = ({ BASE_URL }) => {
   let { id } = useParams()
   const [hashtagInput, setHashtagInput] = useState('')
+  const [fileLimit, setFileLimit] = useState('')
   const [formValues, setFormValues] = useState({
     forum: id,
     photo_urls: [],
@@ -50,25 +50,30 @@ const PostForm = ({ BASE_URL }) => {
     const auth = 'Client-ID ' + clientId
     console.log(clientId)
 
-    Object.values(e.target.files).forEach((file) => {
-      const formData = new FormData()
-      formData.append('image', file)
+    if (e.target.files.length > 10) {
+      setFileLimit(e.target.files.length)
+      document.getElementById('upload-post').disabled = true
+    } else {
+      Object.values(e.target.files).forEach((file) => {
+        const formData = new FormData()
+        formData.append('image', file)
 
-      fetch('https://api.imgur.com/3/image', {
-        method: 'POST',
-        body: formData,
-        headers: {
-          Authorization: auth
-        },
-        body: formData
-      })
-        .then((data) => data.json())
-        .then((data) => {
-          console.log(data)
-          formValues.photo_urls.push(data.data.link)
-          console.log(formValues)
+        fetch('https://api.imgur.com/3/image', {
+          method: 'POST',
+          body: formData,
+          headers: {
+            Authorization: auth
+          },
+          body: formData
         })
-    })
+          .then((data) => data.json())
+          .then((data) => {
+            console.log(data)
+            formValues.photo_urls.push(data.data.link)
+            console.log(formValues)
+          })
+      })
+    }
   }
 
   return (
@@ -83,6 +88,12 @@ const PostForm = ({ BASE_URL }) => {
           onChange={onFileChange}
         />
         <br />
+        {fileLimit ? (
+          <div className="limit-error">
+            Too many files uploaded, you may only upload up to 10 pictures per
+            post.
+          </div>
+        ) : null}
         <textarea
           name="caption"
           rows="10"
@@ -106,7 +117,8 @@ const PostForm = ({ BASE_URL }) => {
         ))}
         <br />
         <button
-          className="upload-photo"
+          className="upload-post"
+          id="upload-post"
           name="submit"
           type="submit"
           onClick={handleSubmit}
