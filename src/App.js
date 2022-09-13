@@ -8,6 +8,7 @@ import ForumForm from './pages/ForumForm'
 import Nav from './components/Nav'
 import UpdateForum from './pages/UpdateForum'
 import PostDetails from './pages/PostDetails'
+import PostForm from './pages/PostForm'
 
 function App() {
   const BASE_URL = 'http://localhost:8000'
@@ -33,6 +34,10 @@ function App() {
         <Route
           path="/PostDetails/:id"
           element={<PostDetails BASE_URL={BASE_URL} />}
+        />
+        <Route
+          path="/PostForm/:id"
+          element={<PostForm BASE_URL={BASE_URL} />}
         />
       </Routes>
     </div>

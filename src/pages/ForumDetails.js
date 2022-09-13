@@ -29,6 +29,7 @@ const ForumDetails = ({ BASE_URL }) => {
         <h3 className="card-title">{forumDetails.name}</h3>
         <p className="card-text">{forumDetails.description}</p>
       </div>
+      <button onClick={() => navigate(`/PostForm/${id}`)}>Make a Post!</button>
       <PostList BASE_URL={BASE_URL} />
     </div>
   )
