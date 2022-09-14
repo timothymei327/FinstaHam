@@ -98,7 +98,8 @@ button:hover {
 
 .button-52,
 .banner > button,
-.post-button {
+.post-button,
+.delete-post-button {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 200;
@@ -245,7 +246,8 @@ button:hover {
   overflow: hidden;
 }
 
-.post-button{
+.post-button,
+.delete-post-button {
   color:white;
 }
 
@@ -254,9 +256,46 @@ button:hover {
 }
 
 .post-detail-images{
-  height: 20em;
-  width: 25em;
+  max-width: 90%;
+  height: auto;
+  width: auto;
   padding: 15px;
+}
+
+.card-caption{
+  background-color: white;
+  border: 2px solid #2e5a88;
+  border-radius: 30px;
+  box-shadow: #2e5a88 4px 4px 0 0;
+  color: #2e5a88;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.hashtag{
+  background-color: #d3d3d3;
+  border: 2px solid #00152d;
+  border-radius: 30px;
+  box-shadow: #00152d 4px 4px 0 0;
+  color: #00152d;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
 textarea{
@@ -338,6 +377,35 @@ input{
     width: 25vh;
     overflow: hidden;
   }
+}
+
+.comment,
+.comment-label {
+  background-color: #d3d3d3;
+  border: 2px solid #004862;
+  border-radius: 30px;
+  box-shadow: #004862 4px 4px 0 0;
+  color: #004862;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.comment-form{
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.comment-box{
+  width: 80%;
+  height: auto;
 }
 
 @media (max-width: 600px) {

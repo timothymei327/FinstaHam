@@ -48,29 +48,39 @@ const PostDetails = ({ BASE_URL }) => {
         ))}
       </div>
       <div className="card-body">
-        <p className="card-text">{postDetails.caption}</p>
+        <h3 className="card-caption">Caption: </h3>
+        <br />
+        <p className="card-caption">{postDetails.caption}</p>
+        <br />
         {postDetails.hashtags?.map((hashtag) => (
           <h4 className="hashtag">{hashtag}</h4>
         ))}
       </div>
-      <button onClick={handleDelete}>Delete Post</button>
+      <button className="delete-post-button" onClick={handleDelete}>
+        Delete Post
+      </button>
+      <br />
+      <h3 className="comment-label">Comments: </h3>
       <div className="comment-container">
         {postDetails.comments?.map((comment) => (
           <p className="comment">{comment.body}</p>
         ))}
-        <form className="comment-form">
-          <textarea
-            className="comment-box"
-            rows="10"
-            placeholder="Leave a comment!"
-            name="body"
-            value={newComment.body}
-            onChange={handleChange}
-          ></textarea>
-          <button onClick={handleSubmit} className="post-button">
-            Post Comment
-          </button>
-        </form>
+        <div className="comment-form">
+          <form>
+            <textarea
+              className="comment-box"
+              rows="10"
+              placeholder="Leave a comment!"
+              name="body"
+              value={newComment.body}
+              onChange={handleChange}
+            ></textarea>
+            <br />
+            <button onClick={handleSubmit} className="post-button">
+              Post Comment
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   )
