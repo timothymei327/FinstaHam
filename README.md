@@ -24,9 +24,9 @@ This website is a public forum where users are able to anonymously create forums
 
 ### _Screenshots_
 
-<!-- ![Landing_Page](https://i.imgur.com/NNxA8Lt.png)
-![Chat_Form_Page](https://i.imgur.com/aRUCOkk.png)
-![Chat_Page](https://i.imgur.com/jyTOo5b.png) -->
+![Landing_Page](https://i.imgur.com/YBszQQF.png)
+![Forum_List](https://i.imgur.com/jFYwevj.jpg)
+![Forum_Details](https://i.imgur.com/7IdfiHf.jpg)
 
 ### _Getting Started_
 
@@ -45,4 +45,5 @@ This website is a public forum where users are able to anonymously create forums
 ### _Future Updates_
 
 - Search function utilizing hashtags and captions
+- Loading icon and message on successful upload to Imgur API
 
