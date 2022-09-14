@@ -18,7 +18,7 @@ header {
               -20px -20px 60px #003b7e;
 }
 
-header button {
+button {
   align-items: center;
   background: #002855;
   border: 0;
@@ -45,7 +45,7 @@ header button {
   word-spacing: normal;
 }
 
-header button:hover {
+button:hover {
   background: #f8f8ff;
   color: #002855;
   box-shadow: -15px -15px 30px 0 #fff, 15px 15px 30px 0 #1d0dca17;
@@ -157,7 +157,7 @@ header button:hover {
 }
 
 @media (min-width: 768px) {
-  button {
+  .button-52 {
     padding: 13px 50px 13px;
   }
 
@@ -256,12 +256,19 @@ header button:hover {
 }
 
 .banner {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   width: 99%;
   height: 10%;
-  border-radius: 50px;
-  background: linear-gradient(145deg, #002b5b, #00244d);
-  box-shadow:  20px 20px 60px #00152c,
-               -20px -20px 60px #003b7e;
+  border-radius: 25px;
+  background: linear-gradient(315deg, #002b5b, #00244d);
+  box-shadow:  -20px -20px 33px #001022,
+              20px 20px 33px #004088;
+}
+
+.banner > * {
+  height: 50px;
 }
 
 .banner-img-top {

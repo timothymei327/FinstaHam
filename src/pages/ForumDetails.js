@@ -18,18 +18,24 @@ const ForumDetails = ({ BASE_URL }) => {
   }, [])
 
   return (
-    <div className="banner mb-3">
-      <img
-        src={forumDetails.photo_url}
-        className="banner-img-top"
-        alt="forum-img"
-      />
-      <button onClick={() => navigate(`/UpdateForum/${id}`)}>Edit</button>
+    <div className="post-container">
+      <div className="banner">
+        <button onClick={() => navigate(`/UpdateForum/${id}`)}>
+          Edit Forum
+        </button>
+        <img
+          src={forumDetails.photo_url}
+          className="banner-img-top"
+          alt="forum-img"
+        />
+        <button onClick={() => navigate(`/PostForm/${id}`)}>
+          Make a Post!
+        </button>
+      </div>
       <div className="card-body">
         <h3 className="card-title">{forumDetails.name}</h3>
         <p className="card-text">{forumDetails.description}</p>
       </div>
-      <button onClick={() => navigate(`/PostForm/${id}`)}>Make a Post!</button>
       <PostList BASE_URL={BASE_URL} />
     </div>
   )
