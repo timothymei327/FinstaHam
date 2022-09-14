@@ -1,17 +1,17 @@
-# FinstaHam - Instagram Clone
+# unmrkd
 
 ## Date: 09/01/2022
 
 ### By: Timothy Mei
 
 - [LinkedIn](https://www.linkedin.com/in/timothymei/)
-- [FinstaHam_Frontend](https://github.com/timothymei327/FinstaHam)
-- [FinstaHam_Backend](https://github.com/timothymei327/FinstaHam_backend)
+- [unmrkd_Frontend](https://github.com/timothymei327/FinstaHam)
+- [unmrkd_Backend](https://github.com/timothymei327/FinstaHam_backend)
 ---
 
 ### _Description_
 
-This website is an Instagram clone which would allow users to post their own photos/videos and create comments on them as well. Users will be able to like posts, add hashtags, then be able to search for posts based on their hashtags as well as search for users based on their username.
+This website is a public forum where users are able to anonymously create forums and post within them, as well as comment on existing posts as well. 
 
 ### _Technologies Used_
 
@@ -20,9 +20,6 @@ This website is an Instagram clone which would allow users to post their own pho
 - Javascript
 - React
 - Django
-- Auth0
-- SemanticUI
-- Tailwind
 
 ### _Screenshots_
 
@@ -46,14 +43,5 @@ This website is an Instagram clone which would allow users to post their own pho
 
 ### _Future Updates_
 
-- MapBox: generates map for the locations of the posts
-- Instagram/Snapchat Stories: posts that disappear after 24 hours
-- Socket.io: a messaging page that allows users to communicate
-
-### _Sources_
-
-#### Functional Sources
-
-
-#### Creative Sources
+- Search function utilizing hashtags and captions
 
