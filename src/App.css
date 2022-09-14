@@ -59,22 +59,22 @@ header button:hover {
 }
 @media (max-width: 600px) {
   header button {
-    padding: 8px;
+    padding: 4px;
   }
 
   header button {
-    box-shadow: -5px -5px 15px 0 #fff,5px 5px 15px 0 #1d0dca17;
+    box-shadow: -3px -3px 10px 0 #fff,3px 3px 10px 0 #1d0dca17;
   }
 
   header button:hover {
     background: #f8f8ff;
     color: #002855;
-    box-shadow: -5px -5px 15px 0 #fff,5px 5px 15px 0 #1d0dca17;
+    box-shadow: -3px -3px 10px 0 #fff,3px 3px 10px 0 #1d0dca17;
   }
 
   .nav-logo {
     height: 1em;
-    box-shadow: -5px -5px 15px 0 #fff,5px 5px 15px 0 #1d0dca17;
+    box-shadow: -3px -3px 10px 0 #fff,3px 3px 10px 0 #1d0dca17;
   }
 }
 
