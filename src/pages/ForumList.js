@@ -20,7 +20,7 @@ const ForumList = ({ BASE_URL }) => {
       {forums.map((forum) => (
         <div
           className="card"
-          onClick={() => navigate(`/ForumDetail/${forum.id}`)}
+          onClick={() => navigate(`/ForumDetails/${forum.id}`)}
         >
           <img
             src={forum.photo_url}

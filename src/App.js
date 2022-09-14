@@ -24,7 +24,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/ForumList" element={<ForumList BASE_URL={BASE_URL} />} />
         <Route
-          path="/ForumDetail/:id"
+          path="/ForumDetails/:id"
           element={<ForumDetails BASE_URL={BASE_URL} />}
         />
         <Route path="/ForumForm" element={<ForumForm BASE_URL={BASE_URL} />} />

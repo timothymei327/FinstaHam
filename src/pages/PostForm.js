@@ -41,14 +41,14 @@ const PostForm = ({ BASE_URL }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    await axios.post(`${BASE_URL}/posts`, formValues)
+    await axios.post(`${BASE_URL}/posts/`, formValues)
     setFormValues({
       forum: id,
       photo_urls: [],
       caption: '',
       hashtags: []
     })
-    navigate('/ForumList')
+    navigate(`/ForumDetails/${id}`)
   }
 
   const onFileChange = (e) => {
