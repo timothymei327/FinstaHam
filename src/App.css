@@ -68,7 +68,7 @@ header Link{
   top: 0;
 }
 
-.home{
+/* .home{
   display: flex;
   align-items: center;
   width: 600px;
@@ -82,9 +82,20 @@ header Link{
   font-family: 'Montserrat', sans-serif;
   color: #d3d3d3;
   font-size: medium;
+} */
+
+.home{
+  display: grid;
+  align-items: center;
+  left: 10%;
+  top: 30%; 
+  color: #d3d3d3;
+  position: fixed;
 }
 
+
 .logo {
+  grid-column-start: 1;
   text-align: center;
   width: 150px;
   height: 150px;
@@ -93,7 +104,11 @@ header Link{
 }
 
 .phrase {
-
+  grid-column-start: 2;
+  margin-left: 50px;
+  width: 50px;
+  text-align: center;
+  font-size: x-small;
 }
 
 
@@ -144,7 +159,7 @@ button:hover:after {
     position: absolute;
     left: 50%;
     top: 50%; 
-    margin-left: -300px;
+    margin-left: -375px;
     margin-top: -300px;
     font-family: 'Montserrat', sans-serif;
     color: #d3d3d3;
@@ -154,6 +169,13 @@ button:hover:after {
   .logo {
     width: 300px;
     height: 300px;
+  }
+
+  .phrase {
+    margin-left: 50px;
+    width: 50px;
+    text-align: center;
+    font-size: large;
   }
 
 }
