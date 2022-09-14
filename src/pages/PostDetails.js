@@ -15,6 +15,12 @@ const PostDetails = ({ BASE_URL }) => {
     setNewComment({ ...newComment, [e.target.name]: e.target.value })
   }
 
+  const handleDelete = async (e) => {
+    e.preventDefault()
+    await axios.delete(`${BASE_URL}/posts/${id}`)
+    navigate('/ForumList')
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     console.log(newComment)
@@ -35,33 +41,37 @@ const PostDetails = ({ BASE_URL }) => {
   }, [newComment])
 
   return (
-    <div className="banner">
-      {postDetails.photo_urls?.map((photo) => (
-        <img src={photo} className="post-images" alt="post-image" />
-      ))}
-      <button onClick={() => navigate(`/UpdatePost/${id}`)}>Edit</button>
+    <div>
+      <div className="banner post-image-container">
+        {postDetails.photo_urls?.map((photo) => (
+          <img src={photo} className="post-detail-images" alt="post-image" />
+        ))}
+      </div>
       <div className="card-body">
         <p className="card-text">{postDetails.caption}</p>
         {postDetails.hashtags?.map((hashtag) => (
           <h4 className="hashtag">{hashtag}</h4>
         ))}
+      </div>
+      <button onClick={handleDelete}>Delete Post</button>
+      <div className="comment-container">
         {postDetails.comments?.map((comment) => (
           <p className="comment">{comment.body}</p>
         ))}
+        <form className="comment-form">
+          <textarea
+            className="comment-box"
+            rows="10"
+            placeholder="Leave a comment!"
+            name="body"
+            value={newComment.body}
+            onChange={handleChange}
+          ></textarea>
+          <button onClick={handleSubmit} className="post-button">
+            Post Comment
+          </button>
+        </form>
       </div>
-      <form className="comment-form">
-        <textarea
-          className="commentBox"
-          rows="10"
-          placeholder="Leave a comment!"
-          name="body"
-          value={newComment.body}
-          onChange={handleChange}
-        ></textarea>
-        <button onClick={handleSubmit} className="postButton">
-          Post Comment
-        </button>
-      </form>
     </div>
   )
 }

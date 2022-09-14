@@ -97,7 +97,8 @@ button:hover {
 
 
 .button-52,
-.banner > button {
+.banner > button,
+.post-button {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 200;
@@ -244,6 +245,28 @@ button:hover {
   overflow: hidden;
 }
 
+.post-button{
+  color:white;
+}
+
+.post-image-container{
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.post-detail-images{
+  height: 20em;
+  width: 25em;
+  padding: 15px;
+}
+
+textarea{
+  resize: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+input{
+  font-family: 'Montserrat', sans-serif;
+}
 
 .forum-form{
   display: grid;
@@ -335,5 +358,11 @@ button:hover {
   .nav-logo {
     height: 1em;
     box-shadow: -3px -3px 10px 0 #fff,3px 3px 10px 0 #1d0dca17;
+  }
+}
+
+@media (max-width: 800){
+  .post-card-container{
+    grid-template-columns: repeat(2, 1fr);
   }
 }
