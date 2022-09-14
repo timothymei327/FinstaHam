@@ -87,7 +87,6 @@ header Link{
 .home{
   display: grid;
   align-items: center;
-  left: 10%;
   top: 30%; 
   color: #d3d3d3;
   position: fixed;
