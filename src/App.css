@@ -191,23 +191,38 @@ header button:hover {
 
 }
 
-.forum-list{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 20px;
-  box-sizing: border-box;
+
+  .forum-list{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-content: space-evenly;
+    align-items: center;    
+    gap: 20px;
+  }
+
+
+@media (min-width: 768px) {
+  .forum-list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-evenly;
+    justify-items: center;
+    align-content: space-evenly;
+    align-items: center;
+  }
 }
 
+
+
 .card {
-  grid-column-start: 1;
   display: grid;
   grid-template-rows: repeat(2, 1fr);
-  align-items: center;
-  /* border: 3px solid black; */
   color: rgb(228, 226, 226);
   height: 350px;
   width: 300px;
+  padding: 30px;
   border-radius: 50px;
   background: linear-gradient(145deg, #00244d, #002b5b);
   box-shadow:  20px 20px 38px #00152d,
@@ -225,8 +240,6 @@ header button:hover {
   width: 100%;
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
-  /* border-radius: 50px; */
-  /* border-bottom: 3px solid black; */
 }
 
 .card-img-top:hover {
