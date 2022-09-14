@@ -1,4 +1,4 @@
-# unmrkd
+# unmrkd_Backend
 
 ## Date: 09/01/2022
 
@@ -20,6 +20,7 @@ This website is a public forum where users are able to anonymously create forums
 - Javascript
 - React
 - Django
+- Imgur API
 
 ### _Screenshots_
 
@@ -35,11 +36,11 @@ This website is a public forum where users are able to anonymously create forums
 
 #### Entity Relationship Diagram
 
-![ERD](https://i.imgur.com/R03azKT.png)
+![ERD](https://i.imgur.com/54OUC60.png)
 
 #### Component Heirarchy Diagram
 
-![Component_Heriarchy_Diagram](https://i.imgur.com/YaQwDEl.png)
+![Component_Heriarchy_Diagram](https://i.imgur.com/L9UFU5s.png)
 
 ### _Future Updates_
 
