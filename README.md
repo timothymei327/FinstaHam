@@ -13,8 +13,8 @@
 
 This website is a public forum where users are able to anonymously create forums and post within them, as well as comment on existing posts as well. 
 
-- Deployed site: [unmrkd_Frontend](https://unmrkd.herokuapp.com/)
-- Deployed site: [unmrkd_Backend](https://unmrkd-backend.herokuapp.com/)
+- [Deployed_Frontend](https://unmrkd.herokuapp.com/)
+- [Deployed_Backend](https://unmrkd-backend.herokuapp.com/)
 
 ### _Technologies Used_
 
