@@ -11,7 +11,6 @@ const ForumDetails = ({ BASE_URL }) => {
   useEffect(() => {
     const getForumDetails = async () => {
       let res = await axios.get(`${BASE_URL}/forums/${id}`)
-      console.log(res.data)
       setForumDetails(res.data)
     }
     getForumDetails()

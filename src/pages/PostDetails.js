@@ -23,7 +23,6 @@ const PostDetails = ({ BASE_URL }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(newComment)
     await axios.post(`${BASE_URL}/comments/`, newComment)
     setNewComment({
       post: id,
@@ -34,7 +33,6 @@ const PostDetails = ({ BASE_URL }) => {
   useEffect(() => {
     const getPostDetails = async () => {
       let res = await axios.get(`${BASE_URL}/posts/${id}`)
-      console.log(res.data)
       setPostDetails(res.data)
     }
     getPostDetails()

@@ -14,7 +14,6 @@ const ForumForm = ({ BASE_URL }) => {
 
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
-    console.log(formValues)
   }
 
   const handleSubmit = async (e) => {
@@ -31,7 +30,6 @@ const ForumForm = ({ BASE_URL }) => {
   const onFileChange = (e) => {
     const clientId = process.env.REACT_APP_CLIENT_ID
     const auth = 'Client-ID ' + clientId
-    console.log(clientId)
 
     if (e.target.files.length > 1) {
       setFileLimit(e.target.files.length)
@@ -51,7 +49,6 @@ const ForumForm = ({ BASE_URL }) => {
         .then((data) => data.json())
         .then((data) => {
           console.log(data)
-          console.log(data.data.success)
           if (data.success === true) {
             setFormValues({ ...formValues, photo_url: data.data.link })
           } else if (data.success === false) {

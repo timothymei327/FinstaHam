@@ -16,7 +16,6 @@ const UpdateForum = ({ BASE_URL }) => {
 
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
-    console.log(formValues)
   }
 
   const handleSubmit = async (e) => {
@@ -44,7 +43,6 @@ const UpdateForum = ({ BASE_URL }) => {
   const onFileChange = (e) => {
     const clientId = process.env.REACT_APP_CLIENT_ID
     const auth = 'Client-ID ' + clientId
-    console.log(clientId)
 
     if (e.target.files.length > 1) {
       setFileLimit(e.target.files.length)
@@ -77,7 +75,6 @@ const UpdateForum = ({ BASE_URL }) => {
     const getOriginalForum = async () => {
       let res = await axios.get(`${BASE_URL}/forums/${id}`)
       setOriginalForum(res.data)
-      console.log(res.data)
       setFormValues({
         name: res.data.name,
         description: res.data.description,
