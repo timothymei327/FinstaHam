@@ -213,6 +213,20 @@ button:hover {
     align-content: space-evenly;
     align-items: center;
   }
+
+  .post-card-container{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-content: space-between;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .post-card{
+    height: 200px;
+    width: 25vh;
+    overflow: hidden;
+  }
 }
 
 .card {
@@ -257,8 +271,6 @@ button:hover {
 .banner {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* grid-template-rows: repeat(2, 1fr); */
-  /* align-items: ; */
   gap: 10px;
   width: 99%;
   height: 10%;
@@ -305,7 +317,22 @@ button:hover {
 .post-images{
   height: 10em;
   width: 10em;
+  justify-self: center;
 }
+
+.post-card-container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  justify-items: center;
+}
+
+.post-card{
+  height: 200px;
+  width: 20vh;
+  overflow: hidden;
+}
+
 
 .forum-form{
   display: grid;
@@ -320,3 +347,25 @@ button:hover {
   border: 2px solid black
 }
 
+@media (min-width: 768px) {
+  .forum-list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-evenly;
+    justify-items: center;
+    align-content: space-evenly;
+    align-items: center;
+  }
+
+  .post-card-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  .post-card{
+    height: 200px;
+    width: 25vh;
+    overflow: hidden;
+  }
+}

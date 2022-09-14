@@ -17,17 +17,18 @@ const PostList = ({BASE_URL}) => {
   }, [])
 
 
+
   return (
-    <div>
+    <div className="post-card-container">
       {posts.map((post) => (
         <div
-          className="card"
+          className="post-card card"
           onClick={() => navigate(`/PostDetails/${post.id}`)}
         >
-          {/* <img src={post.photo_urls[0]} className="post-images" alt="post-image" /> */}
-        {post.photo_urls?.map((photo) => (
+          <img src={post.photo_urls[0]} className="post-images" alt="post-image" />
+        {/* {post.photo_urls?.map((photo) => (
           <img src={photo} className="post-images" alt="post-image" />
-        ))}
+        ))} */}
         <div className="card-body">
           <h2 className="card-text">{post.name}</h2>
           <p className="card-text description">{post.caption}</p>
