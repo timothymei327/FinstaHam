@@ -11,7 +11,8 @@ import PostDetails from './pages/PostDetails'
 import PostForm from './pages/PostForm'
 
 function App() {
-  const BASE_URL = 'http://localhost:8000'
+  // const BASE_URL = 'http://localhost:8000'
+  const BASE_URL = 'https://unmrkd-backend.herokuapp.com'
   axios.defaults.headers.common[
     'Authorization'
   ] = `Client-ID ${process.env.CLIENT_ID}`
