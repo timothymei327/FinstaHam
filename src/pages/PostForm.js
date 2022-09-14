@@ -6,6 +6,7 @@ const PostForm = ({ BASE_URL }) => {
   let { id } = useParams()
   const [hashtagInput, setHashtagInput] = useState('')
   const [hashtagError, setHashtagError] = useState('')
+  const [uploadError, setUploadError] = useState('')
   const [fileLimit, setFileLimit] = useState('')
   const [formValues, setFormValues] = useState({
     forum: id,
@@ -75,8 +76,11 @@ const PostForm = ({ BASE_URL }) => {
           .then((data) => data.json())
           .then((data) => {
             console.log(data)
-            formValues.photo_urls.push(data.data.link)
-            console.log(formValues)
+            if (data.success === true) {
+              formValues.photo_urls.push(data.data.link)
+            } else if (data.success === false) {
+              setUploadError('error')
+            }
           })
       })
     }
@@ -100,6 +104,10 @@ const PostForm = ({ BASE_URL }) => {
             post.
           </div>
         ) : null}
+        {uploadError ? (
+          <div className="error">Image failed to upload</div>
+        ) : null}
+        <br />
         <textarea
           name="caption"
           rows="10"
