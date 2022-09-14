@@ -9,7 +9,7 @@ const Home = () => {
         <img className="logo" src="https://imgur.com/7vB6vgD.png" alt="logo" />
         <div className="phrase">
           <h1>Post freely and anonymously.</h1>
-          <button classname="button-52" onClick={() => navigate('/ForumList')}>
+          <button className="button-52" onClick={() => navigate('/ForumList')}>
             Get Started
           </button>
         </div>
