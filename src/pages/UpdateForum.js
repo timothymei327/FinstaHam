@@ -5,6 +5,7 @@ import axios from 'axios'
 const UpdateForum = ({ BASE_URL }) => {
   let { id } = useParams()
   const [fileLimit, setFileLimit] = useState('')
+  const [uploadError, setUploadError] = useState('')
   const [originalForum, setOriginalForum] = useState({})
   const [formValues, setFormValues] = useState({
     name: '',
@@ -63,7 +64,11 @@ const UpdateForum = ({ BASE_URL }) => {
         .then((data) => data.json())
         .then((data) => {
           console.log(data)
-          setFormValues({ ...formValues, photo_url: data.data.link })
+          if (data.success === true) {
+            setFormValues({ ...formValues, photo_url: data.data.link })
+          } else if (data.success === false) {
+            setUploadError('error')
+          }
         })
     }
   }
@@ -117,6 +122,10 @@ const UpdateForum = ({ BASE_URL }) => {
             your forum page.
           </div>
         ) : null}
+        {uploadError ? (
+          <div className="error">Image failed to upload</div>
+        ) : null}
+        <br />
         <button
           className="upload-photo"
           name="submit"
