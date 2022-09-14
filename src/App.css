@@ -258,11 +258,14 @@ header button:hover {
 .banner {
   width: 99%;
   height: 10%;
-  border: 5px solid black;
+  border-radius: 50px;
+  background: linear-gradient(145deg, #002b5b, #00244d);
+  box-shadow:  20px 20px 60px #00152c,
+               -20px -20px 60px #003b7e;
 }
 
 .banner-img-top {
-  border-radius: 100%;
+  border-radius: 5px;
   height: 10em;
   width: 10em;
 }
@@ -284,3 +287,4 @@ header button:hover {
   text-align: center;
   border: 2px solid black
 }
+

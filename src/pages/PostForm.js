@@ -41,7 +41,7 @@ const PostForm = ({ BASE_URL }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    await axios.post(`${BASE_URL}`, formValues)
+    await axios.post(`${BASE_URL}/posts`, formValues)
     setFormValues({
       forum: id,
       photo_urls: [],

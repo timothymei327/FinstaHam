@@ -35,7 +35,7 @@ const PostDetails = ({ BASE_URL }) => {
   }, [newComment])
 
   return (
-    <div className="banner mb-3">
+    <div className="banner">
       {postDetails.photo_urls?.map((photo) => (
         <img src={photo} className="post-images" alt="post-image" />
       ))}
