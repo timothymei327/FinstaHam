@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Montserrat:wght@600&display=swap');
 
 body{
-  background-color: lightgray;
+  background-color: #002855;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -10,51 +10,58 @@ header {
   height: 6em;
   justify-content: space-around;
   align-items: center;
-  border: 5px solid #002855;
+  /* border: 5px solid #002855; */
   margin-bottom: 2em;
+  border-radius: 50px;
+  background: linear-gradient(145deg, #002b5b, #00244d);
+  box-shadow:  20px 20px 60px #00152c,
+              -20px -20px 60px #003b7e;
 }
 
 header button {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
-  font-weight: 200;
-  letter-spacing: 1px;
-  padding: 13px 20px 13px;
-  outline: 0;
-  border: 1px solid #002855;
+  align-items: center;
+  /* background: #f5f5fa; */
+  border: 0;
+  border-radius: 8px;
+  box-shadow: -10px -10px 30px 0 #fff,10px 10px 30px 0 #1d0dca17;
+  box-sizing: border-box;
+  color: white;
   cursor: pointer;
+  display: flex;
+  font-family: "Cascadia Code",Consolas,Monaco,"Andale Mono","Ubuntu Mono",monospace;
+  font-size: 1rem;
+  justify-content: center;
+  line-height: 1.5rem;
+  padding: 15px;
   position: relative;
-  background-color: darkgray;
+  text-align: left;
+  transition: .2s;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  white-space: pre;
+  width: max-content;
+  word-break: normal;
+  word-spacing: normal;
 }
 
-header button:after {
-  content: "";
-  background-color: darkgray;
-  width: 100%;
-  z-index: -1;
-  position: absolute;
-  height: 100%;
-  top: 7px;
-  left: 7px;
-  transition: 0.2s;
+header button:hover {
+  background: #f8f8ff;
+  color: #002855;
+  box-shadow: -15px -15px 30px 0 #fff, 15px 15px 30px 0 #1d0dca17;
 }
 
-header button:hover:after {
-  top: 0px;
-  left: 0px;
-}
-
-header Link{
-  text-decoration: none;
+@media (min-width: 768px) {
+  header button {
+    padding: 24px;
+  }
 }
 
 .nav-logo{
   height: 5em;
   border: 3px solid #002855;
   border-radius: 5px;
+  box-shadow: -10px -10px 30px 0 #fff,10px 10px 30px 0 #1d0dca17;
 }
 
 .home-container{
@@ -67,22 +74,6 @@ header Link{
   left: 0;
   top: 0;
 }
-
-/* .home{
-  display: flex;
-  align-items: center;
-  width: 600px;
-  height: 600px;
-  text-align: center;
-  position: absolute;
-  left: 50%;
-  top: 50%; 
-  margin-left: -501px;
-  margin-top: -300px;
-  font-family: 'Montserrat', sans-serif;
-  color: #d3d3d3;
-  font-size: medium;
-} */
 
 .home{
   display: grid;
@@ -179,15 +170,27 @@ button:hover:after {
 
 }
 
+.forum-list{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+  box-sizing: border-box;
+}
+
 .card {
+  grid-column-start: 1;
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   align-items: center;
-  border: 3px solid black;
-  color: black;
+  /* border: 3px solid black; */
+  color: rgb(228, 226, 226);
   height: 350px;
-  width: 350px;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  width: 300px;
+  border-radius: 50px;
+  background: linear-gradient(145deg, #00244d, #002b5b);
+  box-shadow:  20px 20px 38px #00152d,
+               -20px -20px 38px #003b7d;
 }
 
 .card:hover {
@@ -197,13 +200,20 @@ button:hover:after {
 }
 
 .card-img-top{
-  height: 100%;
+  height: 233px;
   width: 100%;
-  border-bottom: 3px solid black;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  /* border-radius: 50px; */
+  /* border-bottom: 3px solid black; */
+}
+
+.card-img-top:hover {
+  border-color: #2e5a88;
 }
 
 .card-text{
-  margin: auto;
+  margin: 10px;
   text-align: center;
 }
 
