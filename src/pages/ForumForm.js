@@ -4,6 +4,7 @@ import axios from 'axios'
 
 const ForumForm = ({ BASE_URL }) => {
   const [fileLimit, setFileLimit] = useState('')
+  const [uploadError, setUploadError] = useState('')
   const [formValues, setFormValues] = useState({
     name: '',
     description: '',
@@ -50,7 +51,12 @@ const ForumForm = ({ BASE_URL }) => {
         .then((data) => data.json())
         .then((data) => {
           console.log(data)
-          setFormValues({ ...formValues, photo_url: data.data.link })
+          console.log(data.data.success)
+          if (data.success === true) {
+            setFormValues({ ...formValues, photo_url: data.data.link })
+          } else if (data.success === false) {
+            setUploadError('error')
+          }
         })
     }
   }
@@ -74,11 +80,13 @@ const ForumForm = ({ BASE_URL }) => {
         onChange={onFileChange}
       />
       {fileLimit ? (
-        <div className="limit-error">
+        <div className="error">
           Too many files uploaded, you may only upload a single pictures for
           your forum page.
         </div>
       ) : null}
+      {uploadError ? <div className="error">Image failed to upload</div> : null}
+      <br />
       <button
         className="upload-photo"
         name="submit"
