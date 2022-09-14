@@ -109,17 +109,20 @@ const PostForm = ({ BASE_URL }) => {
         <br />
         {hashtagError ? <div>{hashtagError}</div> : null}
         <label>Hashtags: </label>
-        <input
-          id="hashtagInput"
-          name="hashtagInput"
-          value={hashtagInput}
-          type="text"
-          placeholder="#hashtag"
-          onChange={handleHashtagInput}
-        />
-        <button type="submit" onClick={addHashtag}>
-          +
-        </button>
+        <div>
+          <input
+            id="hashtagInput"
+            className="hashtag-input"
+            name="hashtagInput"
+            value={hashtagInput}
+            type="text"
+            placeholder="#hashtag"
+            onChange={handleHashtagInput}
+          />
+          <button type="submit" className="hashtag-button" onClick={addHashtag}>
+            +
+          </button>
+        </div>
         {formValues.hashtags?.map((hashtag) => (
           <div>{hashtag}</div>
         ))}

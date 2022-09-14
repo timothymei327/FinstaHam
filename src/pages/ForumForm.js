@@ -56,43 +56,38 @@ const ForumForm = ({ BASE_URL }) => {
   }
 
   return (
-    <div className="forum-form">
-      <form className="forum-form-fields">
-        <label>Forum Name: </label>
-        <input name="name" placeholder="name" onChange={handleChange} />
-        <br />
-        <label>Forum Description: </label>
-        <textarea
-          name="description"
-          rows="10"
-          placeholder="description"
-          onChange={handleChange}
-        />
-        <br />
-        <label>Upload a Photo for Your Forum: </label>
-        <input
-          className="upload-photo"
-          name="photo_url"
-          type="file"
-          onChange={onFileChange}
-        />
-        <br />
-        {fileLimit ? (
-          <div className="limit-error">
-            Too many files uploaded, you may only upload a single pictures for
-            your forum page.
-          </div>
-        ) : null}
-        <button
-          className="upload-photo"
-          name="submit"
-          type="submit"
-          onClick={handleSubmit}
-        >
-          Submit
-        </button>
-      </form>
-    </div>
+    <form className="forum-form-fields">
+      <label>Forum Name: </label>
+      <input name="name" placeholder="name" onChange={handleChange} />
+      <label>Forum Description: </label>
+      <textarea
+        name="description"
+        rows="10"
+        placeholder="description"
+        onChange={handleChange}
+      />
+      <label>Upload a Photo for Your Forum: </label>
+      <input
+        className="upload-photo"
+        name="photo_url"
+        type="file"
+        onChange={onFileChange}
+      />
+      {fileLimit ? (
+        <div className="limit-error">
+          Too many files uploaded, you may only upload a single pictures for
+          your forum page.
+        </div>
+      ) : null}
+      <button
+        className="upload-photo"
+        name="submit"
+        type="submit"
+        onClick={handleSubmit}
+      >
+        Submit
+      </button>
+    </form>
   )
 }
 
