@@ -18,7 +18,7 @@ header {
               -20px -20px 60px #003b7e;
 }
 
-button {
+header > button {
   align-items: center;
   background: #002855;
   border: 0;
@@ -53,20 +53,20 @@ button:hover {
 
 
 @media (min-width: 768px) {
-  header button {
+  header > button {
     padding: 24px;
   }
 }
 @media (max-width: 600px) {
-  header button {
+  header > button {
     padding: 4px;
   }
 
-  header button {
+  header > button {
     box-shadow: -3px -3px 10px 0 #fff,3px 3px 10px 0 #1d0dca17;
   }
 
-  header button:hover {
+  header > button:hover {
     background: #f8f8ff;
     color: #002855;
     box-shadow: -3px -3px 10px 0 #fff,3px 3px 10px 0 #1d0dca17;
@@ -123,7 +123,8 @@ button:hover {
 }
 
 
-.button-52 {
+.button-52,
+.banner > button {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 200;
@@ -214,8 +215,6 @@ button:hover {
   }
 }
 
-
-
 .card {
   display: grid;
   grid-template-rows: repeat(2, 1fr);
@@ -256,11 +255,15 @@ button:hover {
 }
 
 .banner {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-rows: repeat(2, 1fr); */
+  /* align-items: ; */
+  gap: 10px;
   width: 99%;
   height: 10%;
+  justify-items: center;
+  margin-bottom: 20px;
   border-radius: 25px;
   background: linear-gradient(315deg, #002b5b, #00244d);
   box-shadow:  -20px -20px 33px #001022,
@@ -269,12 +272,34 @@ button:hover {
 
 .banner > * {
   height: 50px;
+  color: white;
+}
+
+.banner > button:hover {
+  color: #002855;
+  background-color: white;
 }
 
 .banner-img-top {
+  grid-row: 1;
   border-radius: 5px;
   height: 10em;
   width: 10em;
+}
+
+.banner-body{
+  grid-row: 1;
+  grid-column: 2/4;
+}
+
+.banner-edit{
+  grid-column: 2;
+  width: 200px;
+}
+
+.banner-post{
+  grid-column: 1;
+  width: 200px;
 }
 
 .post-images{
