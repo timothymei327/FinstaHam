@@ -17,12 +17,6 @@ This website is a public forum where users are able to anonymously create forums
 - [Deployed_Frontend](https://unmrkd.herokuapp.com/)
 - [Deployed_Backend](https://unmrkd-backend.herokuapp.com/)
 
-<!-- ## **_Getting Started_**
-
-##### `Fork` and `Clone` the project, `npm install` dependencies in the root directory as well as in the `client` directory. Then, connect your mongoDB database via a connection string in a `.env` file on the backend.
-
-##### Run `npm run dev` to spin up the backend server. Navigate to the client directory and run `npm start` to spin up the frontend. -->
-
 ### _Technologies Used_
 
 - HTML
@@ -39,8 +33,6 @@ This website is a public forum where users are able to anonymously create forums
     <img src="https://i.imgur.com/YBszQQF.png" height="500" />&nbsp;&nbsp;&nbsp;<img src="https://i.imgur.com/jFYwevj.jpg" height="500" />&nbsp;&nbsp;&nbsp;<img src="https://i.imgur.com/7IdfiHf.jpg" height="500" />&nbsp;&nbsp;&nbsp;
   </pre>
 </div>
-
-### _Getting Started_
 
 #### Trello Board
 
