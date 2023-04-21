@@ -1,4 +1,4 @@
-# unmrkd_Backend
+# unmrkd
 
 ## Date: 09/01/2022
 
@@ -7,14 +7,21 @@
 - [LinkedIn](https://www.linkedin.com/in/timothymei/)
 - [unmrkd_Frontend](https://github.com/timothymei327/FinstaHam)
 - [unmrkd_Backend](https://github.com/timothymei327/FinstaHam_backend)
+
 ---
 
 ### _Description_
 
-This website is a public forum where users are able to anonymously create forums and post within them, as well as comment on existing posts as well. 
+This website is a public forum where users are able to anonymously create forums and post within them, as well as comment on existing posts as well.
 
 - [Deployed_Frontend](https://unmrkd.herokuapp.com/)
 - [Deployed_Backend](https://unmrkd-backend.herokuapp.com/)
+
+<!-- ## **_Getting Started_**
+
+##### `Fork` and `Clone` the project, `npm install` dependencies in the root directory as well as in the `client` directory. Then, connect your mongoDB database via a connection string in a `.env` file on the backend.
+
+##### Run `npm run dev` to spin up the backend server. Navigate to the client directory and run `npm start` to spin up the frontend. -->
 
 ### _Technologies Used_
 
@@ -27,9 +34,11 @@ This website is a public forum where users are able to anonymously create forums
 
 ### _Screenshots_
 
-![Landing_Page](https://i.imgur.com/YBszQQF.png)
-![Forum_List](https://i.imgur.com/jFYwevj.jpg)
-![Forum_Details](https://i.imgur.com/7IdfiHf.jpg)
+<div align="center">
+  <pre>
+    <img src="https://i.imgur.com/YBszQQF.png" height="500" />&nbsp;&nbsp;&nbsp;<img src="https://i.imgur.com/jFYwevj.jpg" height="500" />&nbsp;&nbsp;&nbsp;<img src="https://i.imgur.com/7IdfiHf.jpg" height="500" />&nbsp;&nbsp;&nbsp;
+  </pre>
+</div>
 
 ### _Getting Started_
 
@@ -44,9 +53,3 @@ This website is a public forum where users are able to anonymously create forums
 #### Component Heirarchy Diagram
 
 ![Component_Heriarchy_Diagram](https://i.imgur.com/L9UFU5s.png)
-
-### _Future Updates_
-
-- Search function utilizing hashtags and captions
-- Loading icon and message on successful upload to Imgur API
-
